@@ -16,7 +16,7 @@ global NList, MList
 
 
 
-sys.stdin = open("bj_10816_in.txt", "r")
+# sys.stdin = open("bj_10816_in.txt", "r")
 input = sys.stdin.readline
 
 N = int(input())
@@ -26,6 +26,7 @@ M = int(input())
 MList = list(map(int, input().split()))
 
 dict_N = Counter(NList)
+print(dict_N)
 
 # print(MList)
 result = [dict_N[i] for i in MList]
@@ -33,20 +34,19 @@ print(*result)
 
 
 
-'''
-sol1) 시간초과
-sys.stdin = open("bj_10816_in.txt", "r")
-input = sys.stdin.readline
 
-N = int(input())
-NList = list(map(int, input().split()))
+# sol1) 시간초과
+# sys.stdin = open("bj_10816_in.txt", "r")
+# input = sys.stdin.readline
 
-M = int(input())
-MList = list(map(int, input().split()))
+# N = int(input())
+# NList = list(map(int, input().split()))
 
-# sol(0, len(NList)-1)
+# M = int(input())
+# MList = list(map(int, input().split()))
 
-countN = [NList.count(i) for i in MList]
+# # sol(0, len(NList)-1)
 
-print(*countN)
-'''
+# countN = [NList.count(i) for i in MList]
+
+# print(*countN)

@@ -5,6 +5,9 @@
 1. 알파벳 정렬(우선순위)
   ㄴ 길이
   ㄴ 사전 순
+길이로 했는데 또 다시 사전 순으로 하면 길이로 했던게 의미가 없어진다.
+sort()는 위 과정이 적용 됨
+
 2. 같은 단어가 여러개 있으면 한 번만 출력
 
 sol)
@@ -23,16 +26,18 @@ N = int(input())
 
 wordList = list(set(input().strip() for _ in range(N)))
 
-wordList.sort()
+wordList.sort(key= lambda x: (len(x), x))
 
-result = []
-for i in range(len(wordList)):
-  result.append((len(wordList[i]), i))
+# result = []
+# for i in range(len(wordList)):
+#   result.append((len(wordList[i]), i))
+# print(result)
 
-result.sort(key= lambda x: x[0])
+# wordList.sort(key= lambda x: len(x))
 
-for i in range(len(result)):
-  print(wordList[result[i][1]])
+print(*wordList, sep='\n')
+# for i in range(len(wordList)):
+#   print(wordList[i])
 
 
 
