@@ -29,26 +29,26 @@ for i in range(N):
 '''
 
 
-'''
-sol2)
-import sys
-
-sys.stdin = open("bj_10814_in.txt", "r")
-input = sys.stdin.readline
-
-N = int(input())
-
-infoList = [input().strip().split() for _ in range(N)]
-
-midList = list(enumerate(infoList))
-
-midList.sort(key=lambda x: (x[1][0], x[0]))
-
-for i in midList:
-  print(i[1][0], i[1][1])
 
 
-'''
+# import sys
+
+# sys.stdin = open("bj_10814_in.txt", "r")
+# input = sys.stdin.readline
+
+# N = int(input())
+
+# infoList = [input().strip().split() for _ in range(N)]
+
+# midList = list(enumerate(infoList))
+
+# midList.sort(key=lambda x: (x[1][0], x[0]))
+
+# for i in midList:
+#   print(i[1][0], i[1][1])
+
+
+
 
 
 '''
