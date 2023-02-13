@@ -7,7 +7,7 @@
 * [[백준] 15666. N과 M (12)](https://www.acmicpc.net/problem/15666)
 * [[백준] 15686. 치킨 배달](https://www.acmicpc.net/problem/15686)
 
-**wowo0709**
+**speardragon**
 
 * [[백준] 1449. 수리공 항승](https://www.acmicpc.net/problem/1449)
 * [[백준] 18111. 마인크래프트](https://www.acmicpc.net/problem/18111)
