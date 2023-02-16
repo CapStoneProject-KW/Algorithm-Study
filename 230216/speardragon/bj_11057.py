@@ -1,6 +1,7 @@
 import sys
 sys.stdin = open("bj_11057_in.txt", "r")
 input = sys.stdin.readline
+from copy import deepcopy
 '''
 idea: sort를 해도 그대로
 memo[] = 오르막 개수
@@ -24,8 +25,6 @@ f(3)
 
 
 
-
-
 889 899
 999
 
@@ -38,23 +37,32 @@ f(4)
 
 def solution(memo):
 
-  tmp = memo
+  tmp = deepcopy(memo)
 
-  # for _ in range(N):
-  for i in range(10):
-      total = 0
-      for j in range(0, i+1):
-        total += tmp[j]
-      print(total)
-      memo[i] = total
-      print(memo,tmp)
-  tmp = memo
-  print(memo)
+  for _ in range(N):
+    #print(memo)
+    for i in range(10):
+        total = 0
+        for j in range(0, i+1):
+          # print(tmp, tmp[j],i)
+          total += tmp[j]
+
+        memo[i] = total
+        # print(memo,tmp)
+    tmp = deepcopy(memo)
+  
+  print(tmp[-1] % 10007)
+  
       
 
 N = int(input())
-_memo = [0] * (1001)
-_memo = [i for i in range(1, 11)]
+# _memo = [0] * (1001)
+# _memo = [i for i in range(1, 11)]
 _memo = [1 for i in range(10)]
 
 solution(_memo)
+
+'''
+tmp = memo를 하면 같은 obejct를 가리키기 때문에 deepcopy를 사용
+or 새로 만들기
+'''

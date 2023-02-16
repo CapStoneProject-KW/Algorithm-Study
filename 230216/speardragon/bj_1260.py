@@ -12,19 +12,18 @@ def dfs(idx):
         if visited1[i] == 0 and graph[idx][i] == 1:
             dfs(i)
 
-# def dfs2(idx):
-#     s = []
-#     s.append(idx)
-#     visited1[idx] = 1
+def dfs2(idx):
+    s = []
+    s.append(idx)
+    visited1[idx] = 1
 
-#     while s:
-#         node = s.pop()
-#         print(node, end=' ')
-#         for i in range(1, N+1):
-#             if visited1[i] == 0 and graph[idx][i] == 1:
-#                 s.append(i)
-#                 visited1[i] = 1
-
+    while s:
+        node = s.pop()
+        print(node, end=' ')
+        for i in range(1, N+1):
+            if visited1[i] == 0 and graph[node][i] == 1:
+                s.append(i)
+                visited1[i] = 1
     
 def bfs(idx):
     q = deque()
@@ -54,7 +53,7 @@ for i in range(M):
     graph[fr][to] = 1
     graph[to][fr] = 1
 
-dfs(V)
+dfs2(V)
 print()
 bfs(V)
 
