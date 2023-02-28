@@ -66,7 +66,6 @@ def solution(memo):
 
 
 
-
 N, K = map(int, input().split())
 # solution.count = 0
 

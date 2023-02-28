@@ -14,12 +14,12 @@ input = sys.stdin.readline
 #     print(*h)
 
 
-# N, M = map(int, input().split())
+N, M = map(int, input().split())
 
-# num_list = [i for i in range(1, N+1)]
+num_list = [i for i in range(1, N+1)]
 
-# for p in P(num_list, repeat=M):
-#     print(*p)
+for p in P(num_list, repeat=M):
+    print(*p)
 
 
 

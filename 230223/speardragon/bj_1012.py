@@ -26,7 +26,7 @@ def bfs(cur):
             ni, nj = ci+di, cj+dj
             if 0<=ni<N and 0<=nj<M and graph[ni][nj] == 1 and not visited[ni][nj]:
                 visited[ni][nj] = True
-                print(visited)
+                # print(visited)
                 q.append((ni, nj))
         
 
@@ -47,7 +47,7 @@ for _ in range(T):
 
     for i in range(N):
         for j in range(M):
-            if visited[i][j]:
+            if visited[i][j] or graph[i][j] == 0:
                 continue
             bfs((i,j))
             # print(visited)
