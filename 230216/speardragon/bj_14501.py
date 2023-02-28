@@ -33,6 +33,7 @@ def solution2():
             _memo[j] = max(_memo[i] + _price[i], _memo[j])
             # if _memo[j] < _memo[i] + _price[i]:
             #     _memo[j] = _memo[i] + _price[i]
+            print(_memo, i, j)
 
     return _memo[N]
 
@@ -50,7 +51,7 @@ def solution(memo, price, time):
 
 N = int(input())
 
-_memo = [0] * 1001
+_memo = [0] * (N+1)
 _price = []
 _time = []
 

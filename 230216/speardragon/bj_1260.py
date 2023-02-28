@@ -2,6 +2,15 @@ import sys
 from collections import deque
 sys.stdin = open("bj_1260_in.txt", "r")
 input = sys.stdin.readline
+'''
+재귀: 만나자마자
+stack-while: 현재 인접한 거 다 넣어놓고 맨 처음부터
+
+문제: 방문순서
+
+f
+
+'''
 
 def dfs(idx):
     visited1[idx] = 1
@@ -20,10 +29,14 @@ def dfs2(idx):
     while s:
         node = s.pop()
         print(node, end=' ')
+        tmp = []
         for i in range(1, N+1):
             if visited1[i] == 0 and graph[node][i] == 1:
+                # tmp.append(i)
                 s.append(i)
                 visited1[i] = 1
+        # s += reversed(tmp)
+        print(s)
     
 def bfs(idx):
     q = deque()
