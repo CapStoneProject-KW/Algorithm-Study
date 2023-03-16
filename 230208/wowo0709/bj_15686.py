@@ -5,7 +5,8 @@ def solution(houses: list[tuple], chickens: list[tuple], m: int) -> int:
     for house in houses:
         chicken_dists[house] = []
         for chicken in chickens:
-            chicken_dists[house].append((chicken, abs(house[0]-chicken[0]) + abs(house[1]-chicken[1]))) # ((i, j), d)
+            distance = abs(house[0]-chicken[0]) + abs(house[1]-chicken[1])
+            chicken_dists[house].append((chicken, distance)) # ((i, j), d)
         chicken_dists[house].sort(key=lambda x: x[1]) # ascending order in distance
     # Find the chicken dist of each house excluding the closed chickens
     chicken_dist_of_city = float('inf')
