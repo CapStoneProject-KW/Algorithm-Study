@@ -10,6 +10,8 @@ input = sys.stdin.readline
 4. 나-아버지 형제: 3촌
 
 친척 관계가 없으면 -1
+
+사이클이 발생하지 않기 때문에 트리 구조라서 dfs 시 visited를 다시 돌려놓는 과정이 없어도 됨
 '''
 def solution(people, A, B, m, relation):
     start, dest = min(A, B), max(A, B)
