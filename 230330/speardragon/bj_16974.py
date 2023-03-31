@@ -30,18 +30,24 @@ dp[N] = 'BPPB'
 #         dp[L] = "B" + tmp + "P" + tmp + "B"
 #     return dp[L]
 
-def solution(l, x):
-    if l == 0:
-        return 1
-    
-    
+def solution(level, x):
+    l, p = hamburger[level]
+    if x == 0:
+        return 0
+    if x == l:
+        return p
+    elif x >= l//2+1:
+        return solution(level-1, x-(l//2+1)) + 1 + hamburger[level-1][1]
+    elif x == l//2:
+        return hamburger[level-1][1]
+    else:
+        return solution(level-1, x-1)
 
 
 N, X = map(int, input().split())
-hamburger = []
+hamburger = [[1, 1]] # 길이, 패티
 
-dp = [None]*51
+for i in range(1, N+1):
+    hamburger.append([3+hamburger[i-1][0]*2, 1+hamburger[i-1][1]*2])
 
-answer = list(solution(N, X))
-answer = sum(map(lambda x: x=="P", answer[len(answer)-X:]))
-print(answer)
+print(solution(N, X))
