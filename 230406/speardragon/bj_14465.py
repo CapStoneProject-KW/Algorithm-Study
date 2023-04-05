@@ -33,9 +33,11 @@ def solution():
 
 def solution2():
     l = [0] + [0 if i in broken else 1 for i in range(1, N+1)]
+    print(l)
 
     for i in range(1, N+1): # 누적합
         l[i] = l[i-1] + l[i]
+    print(l)
 
     answer = 0
     for i in range(K, N+1): # 부분합, 6~10
