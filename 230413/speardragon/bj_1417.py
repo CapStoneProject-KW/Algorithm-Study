@@ -15,16 +15,16 @@ def solution(votes):
     dasom = votes[0]
     answer = 0
     while any(dasom <= votes[i] for i in range(1,N)):
-      for i in range(1, N):
-          if votes[i] > dasom:
-              tmp = ceil((votes[i] + dasom) / 2) # objective
-              votes[i] -= tmp - dasom
-              answer += tmp - dasom
-              dasom = votes[0] = tmp
-          elif votes[i] == dasom:
-              votes[0] = dasom = votes[i] + 1
-              votes[i] = votes[i] - 1
-              answer += 1
+        for i in range(1, N):
+            if votes[i] > dasom:
+                tmp = ceil((votes[i] + dasom) / 2) # objective
+                votes[i] -= tmp - dasom
+                answer += tmp - dasom
+                dasom = votes[0] = tmp
+            elif votes[i] == dasom:
+                votes[0] = dasom = votes[i] + 1
+                votes[i] = votes[i] - 1
+                answer += 1
     return answer
 
 def solution2(votes):
